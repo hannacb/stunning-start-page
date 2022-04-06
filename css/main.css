@@ -2,7 +2,6 @@ html {
   box-sizing: border-box;
   font-family: 'PT Sans Narrow', sans-serif;
   line-height: 1.5;
-  background-color: #f2f2f2;
 }
 
 *,
@@ -11,29 +10,55 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #bebebe;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
 header {
+  display: grid;
+  grid-template-columns: auto 10rem auto;
+  grid-auto-rows: auto 1.5rem;
+  grid-template-areas:
+  "left center right"
+  ". center .";
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+nav {
+  background-color: #bd027d;
+  grid-column: 1/-1;
+  grid-row: 1;
+}
+
+h1 {
+  grid-area: center;
+  margin: 0;
+  z-index: 1;
+}
+
+nav ul {
+  text-decoration: none;
+  list-style: none;
+  padding: 0 1rem;
+  margin: 0;
+  height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #bd027d;
-  padding-top: 1rem;
-  padding-left: .75em;
-}
-
-header ul {
-  display: flex;
-  text-decoration: none;
-  list-style: none;
-  padding: .6rem 1.125rem;
-  margin: 0 auto;
-  font-size: 1.125rem;
-  order: -1;
 }
 
 nav a,
 nav a:visited {
   color: #fff;
-  padding: .6rem 1.125rem;
+  padding: .5rem .8rem;
   text-decoration: none;
   border: 2px solid #960062;
   font-family: 'PT Sans Narrow' sans-serif;
@@ -44,18 +69,7 @@ nav a:hover,
 nav a:focus {
   background-color: #fff;
   color: #bd027d;
-  padding: .6rem 1.125rem;
   text-decoration: none;
-}
-
-header img {
-  margin: 0 auto;
-  width: 100%;
-}
-
-ul{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
 }
 
 main ul > li {
@@ -86,11 +100,27 @@ section {
   margin: 1.5rem;
 }
 
-footer{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 0;
+h3 {
+  align-self: flex-end;
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid;
+  text-align: center;
+  padding: 1rem;
+  margin: -4rem 0 0;
+
+}
+
+strong {
+  text-align: right;
+  display: inline-flex;
+}
+
+main > p {
+  font-family: Georgia, serif;
+  border-bottom: 2px solid #afafaf;
+  padding-bottom: 1.5rem;
+  margin: 1.5rem;
+  font-size: 1.25rem;
 }
 
 footer > p {
@@ -101,12 +131,9 @@ footer > a {
   margin: 0;
 }
 
-h3 {
-  align-self: flex-end;
-}
-
-strong {
-  width: 100%;
-  top: 0;
-  text-align: right;
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
 }
